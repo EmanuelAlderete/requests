@@ -8,11 +8,11 @@ export default function useUser() {
     "idle" | "loading" | "saving"
   >("idle");
 
-  const getUser = useCallback(async (username: string) => {
+  const getUser = useCallback(async (id: string) => {
     try {
       setRequestStatus("loading");
 
-      const data = await fetcher(`/users/${username}`);
+      const data = await fetcher(`/users/${id}`);
 
       setUser(data);
     } catch (err) {
