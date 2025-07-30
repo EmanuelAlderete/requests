@@ -11,6 +11,8 @@ export default function UserNewForm() {
       return;
     }
 
+    e.preventDefault();
+
     const data = new FormData(formRef.current);
 
     const payload = {
@@ -19,8 +21,6 @@ export default function UserNewForm() {
     };
 
     await createUser(payload as User);
-
-    e.preventDefault();
   }
 
   return (
