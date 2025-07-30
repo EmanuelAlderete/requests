@@ -23,7 +23,7 @@ export default function useUser() {
     }
   }, []);
 
-  async function createUse(payload: User) {
+  async function createUser(payload: User) {
     try {
       setRequestStatus("saving");
 
@@ -41,6 +41,6 @@ export default function useUser() {
     user,
     userRequestStatus: requestStatus,
     getUser,
-    createUse,
+    createUser,
   };
 }
