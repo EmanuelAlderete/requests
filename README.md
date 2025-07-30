@@ -10,12 +10,14 @@ This project demonstrates how to work with:
 - State management with custom hooks
 - CRUD operations (Create, Read, Update, Delete)
 - JSON Server integration
+- TanStack Query for server state management
 
 ## Technologies Used
 
 - React + TypeScript
 - Vite
 - JSON Server
+- TanStack Query (React Query)
 - pnpm
 
 ## How to Run
@@ -48,7 +50,8 @@ pnpm dev
 
 ## Features
 
-- User listing
+- User listing with TanStack Query
 - Create new users
 - Detailed information view
 - State management with custom hooks
+- Server state management with React Query
