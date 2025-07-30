@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { fetcher } from "../helpers/api";
+import type { User } from "../models/user";
 
 export default function useUser() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const [requestStatus, setRequestStatus] = useState<
     "idle" | "loading" | "saving"
   >("idle");
 
-  async function getUser(username: string) {
+  const getUser = useCallback(async (username: string) => {
     try {
       setRequestStatus("loading");
 
@@ -20,7 +21,7 @@ export default function useUser() {
     } finally {
       setRequestStatus("idle");
     }
-  }
+  }, []);
 
   return {
     user,
